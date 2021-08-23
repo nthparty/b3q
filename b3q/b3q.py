@@ -12,6 +12,20 @@ def get(method, arguments=None, constraints=None, attribute=None):
     """
     Assemble all items in a paged response pattern from
     the supplied AWS API retrieval method.
+
+    >>> import itertools
+    >>> def method(identifier, position=None):
+    ...     if position is None:
+    ...         position = 0
+    ...     return dict({
+    ...         'items': [{'value': position, 'parity': position % 2}],
+    ...     }, **({'position': position + 1} if position < 10 else {}))
+    >>> [item['value'] for item in itertools.islice(get(
+    ...     method,
+    ...     arguments={'identifier': 0},
+    ...     constraints={'parity': 0}
+    ... ), 0, 5)]
+    [0, 2, 4, 6, 8]
     """
     arguments = {} if arguments is None else arguments
     constraints = {} if constraints is None else constraints
