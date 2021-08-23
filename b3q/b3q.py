@@ -41,4 +41,4 @@ def get(method, arguments=None, constraints=None, attribute=None):
         position = {'position': response['position']}
 
 if __name__ == "__main__":
-    doctest.testmod()
+    doctest.testmod() # pragma: no cover
