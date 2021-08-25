@@ -33,7 +33,7 @@ def get(method, arguments=None, constraints=None, attribute=None):
     position = {}
     while True:
         response = method(**arguments, **position)
-        for item in response[attribute]:
+        for item in response.get(attribute, []):
             if all(item[k] == v for (k, v) in constraints.items()):
                 yield item
         if not 'position' in response:
