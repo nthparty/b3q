@@ -4,7 +4,7 @@ b3q
 
 Boto3 utility library that supports parameter-driven and predicate-driven retrieval of collections of AWS resources.
 
-|pypi| |travis|
+|pypi| |travis| |coveralls|
 
 .. |pypi| image:: https://badge.fury.io/py/b3q.svg
    :target: https://badge.fury.io/py/b3q
@@ -12,6 +12,9 @@ Boto3 utility library that supports parameter-driven and predicate-driven retrie
 
 .. |travis| image:: https://travis-ci.com/nthparty/b3q.svg?branch=main
    :target: https://travis-ci.com/nthparty/b3q
+
+.. |coveralls| image:: https://coveralls.io/repos/github/nthparty/blooms/badge.svg?branch=main
+   :target: https://coveralls.io/github/nthparty/b3q?branch=main
 
 Purpose
 -------
