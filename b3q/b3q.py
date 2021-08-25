@@ -19,13 +19,13 @@ def get(method, arguments=None, constraints=None, attribute=None):
     ...         position = 0
     ...     return dict({
     ...         'items': [{'value': position, 'parity': position % 2}],
-    ...     }, **({'position': position + 1} if position < 10 else {}))
+    ...     }, **({'position': position + 1} if position <= 4 else {}))
     >>> [item['value'] for item in itertools.islice(get(
     ...     method,
     ...     arguments={'identifier': 0},
     ...     constraints={'parity': 0}
-    ... ), 0, 5)]
-    [0, 2, 4, 6, 8]
+    ... ), 0, 4)]
+    [0, 2, 4]
     """
     arguments = {} if arguments is None else arguments
     constraints = {} if constraints is None else constraints
