@@ -1,10 +1,7 @@
-"""Boto3 predicate-driven retrieval of AWS resources.
-
-Boto3 utility library that supports parameter-driven and
-predicate-driven retrieval of collections of AWS
-resources.
 """
-
+Boto3 utility library that supports parameter-driven and predicate-driven
+retrieval of collections of AWS resources.
+"""
 from __future__ import annotations
 import doctest
 
