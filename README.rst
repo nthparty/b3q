@@ -37,6 +37,27 @@ The library can be imported in the usual ways::
     import b3q
     from b3q import *
 
+Examples
+^^^^^^^^
+The library make it possible to concisely retrieve all instances of an AWS resource (potentially spanning multiple pages of results). The library requires the use of the `Boto3 <https://boto3.readthedocs.io>`_ library to create a client object that can be used to retrieve information about AWS resources. In the example below, an AWS API Gateway client is created.
+
+    >>> import boto3
+    >>> client = boto3.client('apigateway')
+
+In the example below, all custom domain name entries are retrieved::
+
+    >>> import b3q
+    >>> ns = b3q.get(client.get_domain_names)
+
+The example below illustrates the retrieval of an API with the name ``'example_api'``::
+
+    >>> apis = b3q.get(client.get_rest_apis, constraints={'name': 'example_api'})
+    >>> api = apis[0] # Assumes there is one result.
+
+The steps below retrieve all API deployments associated with the specific API retrieved above::
+
+    >>> ds = b3q.get(client.get_deployments, arguments={'restApiId': api['id']})
+
 Documentation
 -------------
 .. include:: toc.rst
@@ -49,7 +70,7 @@ The documentation can be generated automatically from the source files using `Sp
 
 Testing and Conventions
 -----------------------
-All unit tests are executed and their coverage is measured when using `nose <https://nose.readthedocs.io/>`_ (see ``setup.cfg`` for configution details)::
+All unit tests are executed and their coverage is measured when using `nose <https://nose.readthedocs.io/>`_ (see ``setup.cfg`` for configuration details)::
 
     python -m pip install nose coverage
     nosetests --cover-erase
