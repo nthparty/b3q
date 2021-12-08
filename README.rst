@@ -39,7 +39,7 @@ The library can be imported in the usual ways::
 
 Examples
 ^^^^^^^^
-The library make it possible to concisely retrieve all instances of an AWS resource (potentially spanning multiple pages of results). The library requires the use of the `Boto3 <https://boto3.readthedocs.io>`_ library to create a client object that can be used to retrieve information about AWS resources. In the example below, an AWS API Gateway client is created.
+The library make it possible to concisely retrieve all instances of an AWS resource (potentially spanning multiple pages of results). The library requires the use of the `Boto3 <https://boto3.readthedocs.io>`_ library to create a client object that can be used to retrieve information about AWS resources. In the example below, an AWS API Gateway client is created::
 
     >>> import boto3
     >>> client = boto3.client('apigateway')
