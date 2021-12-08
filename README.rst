@@ -18,7 +18,7 @@ Boto3 utility library that supports parameter-driven and predicate-driven retrie
    :target: https://github.com/nthparty/b3q/actions/workflows/lint-test-cover-docs.yml
    :alt: GitHub Actions status.
 
-.. |coveralls| image:: https://coveralls.io/repos/github/nthparty/blooms/badge.svg?branch=main
+.. |coveralls| image:: https://coveralls.io/repos/github/nthparty/b3q/badge.svg?branch=main
    :target: https://coveralls.io/github/nthparty/b3q?branch=main
    :alt: Coveralls test coverage summary.
 
