@@ -86,7 +86,7 @@ Alternatively, all unit tests are included in the module itself and can be execu
 Style conventions are enforced using `Pylint <https://www.pylint.org>`__::
 
     python -m pip install .[lint]
-    pylint b3q
+    python -m pylint src/b3q
 
 Contributions
 ^^^^^^^^^^^^^
