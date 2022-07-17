@@ -12,7 +12,7 @@ def get(
         constraints: Optional[dict] = None,
         attribute: Optional[str] = None
     ) -> Iterable:
-    # pylint: disable=C0301 # Accommodate long URL.
+    # pylint: disable=line-too-long # Accommodate long URL.
     """
     Assemble all items in a paged response pattern from the supplied AWS API retrieval method.
 
@@ -51,5 +51,5 @@ def get(
             break
         position = {'position': response['position']}
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     doctest.testmod() # pragma: no cover
