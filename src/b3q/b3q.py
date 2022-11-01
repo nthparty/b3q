@@ -47,9 +47,16 @@ def get(
         for item in response.get(attribute, []):
             if all(item[k] == v for (k, v) in constraints.items()):
                 yield item
-        if not 'position' in response:
+        if 'position' in response:
+            position = {'position': response['position']}
+        elif 'NextMarker' in response:
+            position = {'Marker': response['NextMarker']}
+        elif 'Marker' in response:
+            position = {'Marker': response['Marker']}
+        elif 'NextToken' in response:
+            position = {'NextToken': response['NextToken']}
+        else:
             break
-        position = {'position': response['position']}
 
 if __name__ == '__main__':
     doctest.testmod() # pragma: no cover
